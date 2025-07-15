@@ -4,7 +4,10 @@ import './Header.css';
 export default function Header({ language, setLanguage }) {
   return (
     <header className="header">
-      <h1 className="title">NBA Dashboard</h1>
+      <div className="logo-title">
+        <img src="/public/nba-logo.svg" alt="NBA Logo" className="nba-logo" />
+        <h1 className="title">NBA Dashboard</h1>
+      </div>
       <div className="language-switcher">
         <button
           className={language === 'en' ? 'active' : ''}

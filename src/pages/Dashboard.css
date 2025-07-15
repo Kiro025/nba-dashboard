@@ -1,28 +1,37 @@
+.controls {
+  background-color: #ffffff;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: center;
+}
+
+.chart-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 32px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.chart-card::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(to right, #1D428A, #C8102E); /* NBA gradient */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 16px;
+}
+
 .dashboard-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 24px;
-  }
-  
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 20px;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 16px 20px;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  }
-  
-  .chart-card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 32px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
