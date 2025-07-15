@@ -1,9 +1,40 @@
+/* src/components/Header.css */
 .header {
-    background-color: #0f172a;
-    color: white;
-    padding: 16px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.language-switcher button {
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.language-switcher button:hover {
+  background-color: #e5e7eb;
+}
+
+.language-switcher .active {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}

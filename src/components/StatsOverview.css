@@ -1,0 +1,36 @@
+.stats-overview {
+    background-color: #ffffff;
+    padding: 16px;
+    border: 1px solid #ddd;
+    margin-bottom: 24px;
+    border-radius: 8px;
+  }
+  
+  .stat-cards {
+    display: flex;
+    gap: 16px;
+    justify-content: space-around;
+    margin-top: 12px;
+  }
+  
+  .card {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    background-color: #f0f4f8;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .value {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e40af;
+  }
+  
+  .label {
+    font-size: 14px;
+    color: #374151;
+  }
+  
