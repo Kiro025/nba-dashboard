@@ -49,6 +49,7 @@ export const nbaStatsData = {
         selectPlayer: "Select Player",
         selectYear: "Select Year",
         language: "Language",
+        yearRange: "Year Range",
       },
       fr: {
         dashboardTitle: "Tableau de bord des statistiques NBA",
@@ -60,6 +61,7 @@ export const nbaStatsData = {
         selectPlayer: "Sélectionner un joueur",
         selectYear: "Sélectionner une année",
         language: "Langue",
+        yearRange: "Plage d'années",
       }
     }
   };

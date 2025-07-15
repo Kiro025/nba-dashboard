@@ -7,13 +7,24 @@ import BarChart from '../components/BarChart';
 export default function Dashboard() {
   const [language, setLanguage] = useState('en');
   const [selectedPlayer, setSelectedPlayer] = useState('LeBron James');
+  const [startYear, setStartYear] = useState(2020);
+  const [endYear, setEndYear] = useState(2023);
+  const [selectedYear, setSelectedYear] = useState(2023);
 
   const labels = nbaStatsData.i18n[language];
   const playerOptions = nbaStatsData.meta.players;
+  const yearOptions = nbaStatsData.meta.availableYears;
 
   const filteredTimeSeries = nbaStatsData.timeSeries.filter(
-    (item) => item.player === selectedPlayer
+    (item) =>
+      item.player === selectedPlayer &&
+      item.year >= startYear &&
+      item.year <= endYear
   );
+
+  const filteredBarData = nbaStatsData.timeSeries
+    .filter((item) => item.year === selectedYear)
+    .map(({ player, points, assists, rebounds }) => ({ player, points, assists, rebounds }));
 
   return (
     <div>
@@ -41,15 +52,48 @@ export default function Dashboard() {
         </button>
       </div>
 
+      <div style={{ margin: '10px 0' }}>
+        <label>{labels.yearRange}: </label>
+        <select value={startYear} onChange={(e) => setStartYear(Number(e.target.value))}>
+          {yearOptions.map((year) => (
+            <option key={year} value={year}>
+              {year}
+            </option>
+          ))}
+        </select>
+        <span> - </span>
+        <select value={endYear} onChange={(e) => setEndYear(Number(e.target.value))}>
+          {yearOptions.map((year) => (
+            <option key={year} value={year}>
+              {year}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <LineChart
         title={labels.lineChartTitle}
         data={filteredTimeSeries}
         labels={labels}
       />
 
+      <div style={{ margin: '10px 0' }}>
+        <label>{labels.selectYear}: </label>
+        <select
+          value={selectedYear}
+          onChange={(e) => setSelectedYear(Number(e.target.value))}
+        >
+          {yearOptions.map((year) => (
+            <option key={year} value={year}>
+              {year}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <BarChart
         title={labels.barChartTitle}
-        data={nbaStatsData.compare2023}
+        data={filteredBarData}
         labels={labels}
       />
     </div>
