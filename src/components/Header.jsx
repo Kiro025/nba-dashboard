@@ -1,11 +1,12 @@
 // src/components/Header.jsx
 import './Header.css';
+import nbaLogo from "../assets/nba-logo.svg"
 
 export default function Header({ language, setLanguage }) {
   return (
     <header className="header">
       <div className="logo-title">
-        <img src="/public/nba-logo.svg" alt="NBA Logo" className="nba-logo" />
+        <img src={nbaLogo} alt="NBA Logo" className="nba-logo" />
         <h1 className="title">NBA Dashboard</h1>
       </div>
       <div className="language-switcher">
